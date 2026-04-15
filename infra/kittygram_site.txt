@@ -2,4 +2,4 @@ IP: 158.160.149.41;
 name_taski: https://myfirsthostname.ddnsking.com;
 name_kittygram: https://kittygramvm.ddnsking.com;
 login: admin;
-password: твой_пароль_суперюзера;
+password: admin;
