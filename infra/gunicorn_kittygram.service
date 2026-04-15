@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon for Kittygram
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/infra_sprint1/backend
+ExecStart=/home/ubuntu/infra_sprint1/venv/bin/gunicorn --bind 127.0.0.1:8080 kittygram_backend.wsgi
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
