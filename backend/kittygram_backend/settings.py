@@ -25,7 +25,8 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = os.getenv('SECRET_KEY')
-SECRET_KEY = 'django-insecure-temporary-key-for-tests'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-test-key-for-ci')
+#SECRET_KEY = 'django-insecure-temporary-key-for-tests'
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False
 
