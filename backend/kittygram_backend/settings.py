@@ -7,11 +7,27 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+def load_env_file():
+    """Ручное чтение .env файла."""
+    env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+    if os.path.exists(env_path):
+        with open(env_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    key, value = line.split('=', 1)
+                    os.environ[key] = value
+
+load_env_file()
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = os.getenv('SECRET_KEY')
-SECRET_KEY = 'django-insecure-temporary-key-for-tests'
+#SECRET_KEY = 'django-insecure-temporary-key-for-tests'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',

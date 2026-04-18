@@ -1,5 +1,5 @@
 IP: 158.160.149.41;
 name_taski: https://myfirsthostname.ddnsking.com;
 name_kittygram: https://kittygramvm.ddnsking.com;
-login: admin;
-password: admin;
+login: ubuntu;
+password: gleb220300;
