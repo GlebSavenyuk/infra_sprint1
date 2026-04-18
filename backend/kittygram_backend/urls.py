@@ -1,4 +1,5 @@
 from rest_framework import routers
+from django.http import JsonResponse
 
 from django.contrib import admin
 from django.urls import include, path
@@ -18,6 +19,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.authtoken')),
+    path('api/', lambda request: JsonResponse({'message': 'API is working'})),
 ]
 
 if settings.DEBUG:
